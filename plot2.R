@@ -17,7 +17,7 @@ data$dateTime  <- as.POSIXlt(paste(as.Date(data$Date,format="%d/%m/%Y"), data$Ti
 
 #plot data and create a png file
 
-with(data, plot(dateTime, Global_active_power, type="l", ylab="Global Active Power (kilowatts)"))
+with(data, plot(dateTime, Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)"))
 
 dev.copy(png, width=480, height=480, file="plot2.png")
 dev.off()
