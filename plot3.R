@@ -17,11 +17,10 @@ data$dateTime  <- as.POSIXlt(paste(as.Date(data$Date,format="%d/%m/%Y"), data$Ti
 
 #plot data and create a png file
 
-with(data, plot(dateTime, Sub_metering_1, type = "l", col = "black", ylab = "Energy sub metering"))
-with(data, lines(time, Sub_metering_2, col = "red"))
+with(data, plot(dateTime, Sub_metering_1, type = "l", col = "black", xlab="", ylab = "Energy sub metering"))
 with(data, lines(dateTime, Sub_metering_2, col = "red"))
 with(data, lines(dateTime, Sub_metering_3, col = "blue"))
-legend("topright", lty=1, col=c("black", "red", "blue"), legend=c("Sub Metering 1", "Sub Metering 2", "Sub Metering 3"))
+legend("topright", lty=1, cex=.75,  bty="n", col=c("black", "red", "blue"), legend=c("Sub_Metering_1", "Sub_Metering_2", "Sub_Metering_3"))
 
 
 dev.copy(png, width=480, height=480, file="plot3.png")
